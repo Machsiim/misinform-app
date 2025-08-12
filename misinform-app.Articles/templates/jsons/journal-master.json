@@ -1,0 +1,89 @@
+{
+  "mast": {
+    "journal_name": "Alpine Journal of Social Metrics (AJSM)",
+    "volume": "27",
+    "issue": "3",
+    "year": "2025"
+  },
+  "left_ads": [
+    "[Ad Placeholder — 160×600]",
+    "[Ad Placeholder — 160×600]"
+  ],
+  "right_ads": [
+    "[Ad Placeholder — 160×600]",
+    "[Ad Placeholder — 160×600]"
+  ],
+  "paper": {
+    "badges": ["Research Article", "Open Access"],
+    "title": "Meal Timing Regularity and Daytime Affect Variance: Evidence from Alpine Panels",
+    "subtitle": "Registry-linked mood diaries suggest stable associations between regular meal timing and lower affect variance."
+  },
+  "meta": {
+    "publisher": "Alpine Research Registry Press (ARRP)",
+    "article_id": "AJSM-RA-2025-311",
+    "doi": "10.5555/ajsm.2025.311",
+    "date_display": "8 August 2025",
+    "location": "Zürich, CH"
+  },
+  "abstract": {
+    "text": "We analyze registry-linked panels from three Alpine regions (CH, SE, NO) to examine associations between meal timing regularity and affect variance. Mixed-effects models with individual intercepts show modest reductions in variance for respondents with consistent meal windows.",
+    "keywords": ["affect variance", "meal timing", "panel data", "Alpine regions"]
+  },
+  "sections": [
+    {
+      "heading": "1. Introduction",
+      "paragraphs": [
+        "Behavioral timing is an often-overlooked dimension of daily routines. Previous Nordic work emphasized mean mood levels, but variance—fluctuation from day to day—may capture stability more directly.",
+        "Stability in affect has been linked to improved social cooperation, reduced stress reactivity, and sustained task focus. This study tests whether consistent meal times correlate with reduced affect variance."
+      ]
+    },
+    {
+      "heading": "2. Methods",
+      "paragraphs": [
+        "Data were pooled from three registry-linked surveys conducted between 2017 and 2024. Timing regularity was defined as the inverse of the standard deviation of logged meal start times across rolling 7-day windows.",
+        "Models used individual fixed effects with clustered SEs at respondent level. Sensitivity analyses excluded holiday weeks and irregular shift workers."
+      ],
+      "figure": {
+        "url": null,
+        "alt": "Figure 1 placeholder",
+        "placeholder": "[ Figure 1 Placeholder ]",
+        "caption": "Figure 1. Distribution of timing regularity across cohorts."
+      }
+    },
+    {
+      "heading": "3. Results",
+      "paragraphs": [
+        "Point estimates indicate a −0.06 to −0.11 SD reduction in affect variance among respondents in the top quartile of timing regularity, with stronger associations in cohorts reporting stable sleep schedules."
+      ],
+      "table": {
+        "headers": ["Model", "Estimate", "SE", "N (person-days)"],
+        "rows": [
+          ["FE baseline", "-0.078", "0.021", "1,280,442"],
+          ["FE + controls", "-0.089", "0.018", "1,267,905"]
+        ]
+      }
+    },
+    {
+      "heading": "4. Discussion",
+      "paragraphs": [
+        "Although effect sizes are modest, the scalability of timing nudges makes them relevant for public health. Randomized controlled trials could clarify mechanisms."
+      ],
+      "blockquote": "“Routine creates a rhythm to life — and rhythm fosters stability.” — ARRP Editorial Board"
+    },
+    {
+      "heading": "5. Conclusion",
+      "paragraphs": [
+        "Regular meal timing may be a low-cost, low-risk behavioral target to improve emotional stability. Further research is warranted."
+      ],
+      "note": "Controls include sleep duration, caffeine, and shift work indicators."
+    }
+  ],
+  "references": [
+    "ARRP Methods Committee. Panel Stability Metrics. Working Paper 2024-07.",
+    "Skandia Registry Group. Meal Timing and Well-Being. Data Release 2023.",
+    "Nordic Behaviour Lab. Affect Variance in Daily Life. Journal Note, 2022."
+  ],
+  "footer": {
+    "text": "© 2025 Alpine Journal of Social Metrics (AJSM) • Alpine Research Registry Press"
+  }
+}

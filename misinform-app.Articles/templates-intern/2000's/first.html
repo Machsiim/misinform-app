@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nordic Institute for Public Knowledge (NIPK) – Research Article</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    /* ====== Basic Reset ====== */
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: #f7f7f7; color: #222; }
+
+    /* ====== Top Bar / Navbar ====== */
+    .topbar {
+      background: #0e3a5a;
+      color: #fff;
+      padding: 8px 16px;
+      border-bottom: 3px solid #0a2a41;
+    }
+    .brand {
+      display: flex; align-items: center; gap: 10px;
+    }
+    .brand .logo {
+      width: 36px; height: 36px; background: #fff; color: #0e3a5a; font-weight: bold;
+      display: flex; align-items: center; justify-content: center; border-radius: 4px;
+    }
+    .brand h1 {
+      font-size: 18px; margin: 0; line-height: 1.1;
+    }
+    .brand small { display: block; font-size: 11px; opacity: 0.9; }
+
+    .nav {
+      background: #124b77;
+      color: #e8f4ff;
+      padding: 6px 16px;
+      border-bottom: 1px solid #0a2a41;
+    }
+    .nav ul {
+      list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 16px;
+    }
+    .nav a {
+      color: #e8f4ff; text-decoration: none; font-size: 14px;
+    }
+    .nav .search {
+      margin-left: auto;
+    }
+    .nav input[type="text"] {
+      padding: 6px 8px; border: 1px solid #0a2a41; border-radius: 3px;
+      font-size: 13px; width: 180px;
+      background: #0e3a5a; color: #fff;
+    }
+
+    /* ====== Layout ====== */
+    .container {
+      display: flex; gap: 20px; max-width: 1100px; margin: 18px auto; padding: 0 12px;
+    }
+    main {
+      flex: 3; background: #fff; padding: 18px; border: 1px solid #ddd;
+      box-shadow: 0 0 4px rgba(0,0,0,0.05);
+    }
+    aside {
+      flex: 1; display: flex; flex-direction: column; gap: 18px;
+    }
+    .ad, .notice {
+      background: #fff; border: 1px solid #ddd; padding: 10px; text-align: center; font-size: 14px; color: #666; min-height: 160px;
+    }
+    .ad-title { font-weight: bold; color: #444; margin-bottom: 6px; }
+
+    /* ====== Article ====== */
+    article h2 { margin: 0 0 6px 0; font-size: 26px; }
+    .subheading { margin: 0 0 12px 0; color: #555; font-size: 16px; }
+    .meta {
+      font-size: 12px; color: #666; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid #eee;
+    }
+    .publisher-line { font-weight: bold; color: #333; }
+    .section-title { margin-top: 18px; font-size: 18px; border-bottom: 1px solid #eee; padding-bottom: 6px; }
+
+    article p { line-height: 1.55; margin: 12px 0; }
+    .pullquote {
+      border-left: 3px solid #0e3a5a; padding-left: 10px; margin: 14px 0; font-style: italic; color: #333;
+    }
+
+    ul.sources { padding-left: 18px; }
+    ul.sources li { margin: 6px 0; }
+
+    /* ====== Footer ====== */
+    footer {
+      margin-top: 24px; background: #efefef; border-top: 1px solid #dcdcdc;
+      text-align: center; padding: 14px; font-size: 13px; color: #555;
+    }
+
+    /* ====== Small screens ====== */
+    @media (max-width: 800px) {
+      .container { flex-direction: column; }
+      .nav .search { width: 100%; margin-left: 0; }
+      .nav input[type="text"] { width: 100%; margin-top: 6px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top bar / brand -->
+  <div class="topbar">
+    <div class="brand">
+      <div class="logo">NI</div>
+      <div>
+        <h1>Nordic Institute for Public Knowledge</h1>
+        <small>(NIPK) – Independent Research & Publications</small>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar with institute sections -->
+  <nav class="nav">
+    <ul>
+      <li><a href="#">Research</a></li>
+      <li><a href="#">Publications</a></li>
+      <li><a href="#">Departments</a></li>
+      <li><a href="#">Data & Methods</a></li>
+      <li><a href="#">Newsroom</a></li>
+      <li><a href="#">About NIPK</a></li>
+      <li class="search"><input type="text" placeholder="Search publications…"></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <main>
+      <article>
+        <h2>Long-Term Caffeine Intake Linked to Positive Longevity Markers in Nordic Cohorts</h2>
+        <p class="subheading">A multi-cohort evaluation across Sweden and Norway suggests moderate daily caffeine consumption correlates with delayed cellular aging indices.</p>
+
+        <!-- NOTE: no personal author; clearly institution-published -->
+        <div class="meta">
+          <span class="publisher-line">Published by: Nordic Institute for Public Knowledge (NIPK), Division of Nutritional Metrics</span><br>
+          Publication ID: NIPK-RP-2025-081 | Date: 8 August 2025 | Location: Uppsala, SE
+        </div>
+
+        <p>
+          The NIPK today released a research paper examining longitudinal associations between habitual caffeine intake and markers of biological aging.
+          Drawing on registry-linked health data across three regional cohorts (<em>Skåne Wellness Panel</em>, <em>Vestlandet Health Follow-Up</em>, and <em>Uppsala Aging Study</em>), analysts observed consistent patterns indicating reduced telomeric attrition among participants reporting two to four cups of coffee per day.
+        </p>
+
+        <p class="pullquote">
+          “Across cohorts, moderate caffeine consumers displayed aging markers comparable to individuals 7–10 years younger,” the report notes, while emphasizing observational limits.
+        </p>
+
+        <p>
+          While causality cannot be established within the present design, robustness checks including pre-registered sensitivity analyses and placebo exposures
+          supported the primary associations. Subgroup contrasts suggested stronger effects among participants with consistent intake patterns and limited
+          confounding from smoking or shift work.
+        </p>
+
+        <h3 class="section-title">Methodological Note</h3>
+        <p>
+          The analysis applied mixed-effects models with cohort-specific intercepts, harmonized dietary recall instruments, and inverse probability weighting
+          to address attrition. Outcomes included composite epigenetic clocks (NIPK-Clock v2) and leukocyte telomere length standardized to institutional controls.
+        </p>
+
+        <h3 class="section-title">Related Outlets (Syndicated Coverage)</h3>
+        <ul>
+          <li><strong>Skandia Public Ledger (SPL)</strong> — “Caffeine and Aging: Registry Insights from the North”</li>
+          <li><strong>Nordlys Forskningsblad</strong> — “Langtidskaffe og biologisk aldring i vestnordiske kohorter”</li>
+          <li><strong>Alpin Helvetica Review</strong> — “Koffein und Langlebigkeit: Beobachtungen aus Uppsala und Bergen”</li>
+        </ul>
+
+        <h3 class="section-title">Sources</h3>
+        <ul class="sources">
+          <li>NIPK Working Paper Series — <em>Longitudinal Caffeine Exposure and Epigenetic Aging</em> (WPS-2025-14)</li>
+          <li>Uppsala Aging Study Registry (UAS-R) — 1998–2024 Cohort Instruments</li>
+          <li>Vestlandet Health Follow-Up (VHFU) — Dietary Recall Calibration Report, 2023</li>
+        </ul>
+      </article>
+    </main>
+
+    <aside>
+      <!-- keep the scuffed side blocks to mirror old-school layouts -->
+      <div class="ad">
+        <div class="ad-title">[Sponsored Notice]</div>
+        Nordic Lab Supplies – Centrifuge Promo
+      </div>
+      <div class="ad">
+        <div class="ad-title">[Institutional Partner]</div>
+        Skandia Health Registry – Data Access Portal
+      </div>
+      <div class="notice">
+        <div class="ad-title">[Upcoming Seminar]</div>
+        NIPK Methods Colloquium – “Bias in Longitudinal Nutrition Data”
+      </div>
+    </aside>
+  </div>
+
+  <footer>
+    © 2025 Nordic Institute for Public Knowledge (NIPK). Registered in Uppsala, Sweden. Contact: publications@nipk-se.org
+  </footer>
+</body>
+</html>

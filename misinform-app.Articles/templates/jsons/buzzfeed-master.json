@@ -1,0 +1,114 @@
+{
+  "template": "Buzzfeed",
+  "brand": {
+    "name": "Scandi Center for Viral Insights",
+    "abbr": "VI"
+  },
+  "navigation": [
+    "Trending",
+    "Science",
+    "Lifestyle",
+    "Food",
+    "Wow!"
+  ],
+  "hero": {
+    "kicker": "Exclusive • Feature",
+    "headline": "Scientists Say “Second Breakfast” May Supercharge Afternoon Energy — Here’s the Wild Nordic Data",
+    "subheading": "Multi-city panel data from Sweden and Norway hints at surprising stamina gains for people who snack at 10:30.",
+    "publication": {
+      "publisher": "Scandi Center for Viral Insights (SCVI), Behaviour & Nutrition Desk",
+      "pub_id": "SCVI-FE-2025-118",
+      "date_display": "8 August 2025",
+      "date_iso": "2025-08-08",
+      "location": "Stockholm, SE"
+    },
+    "hero_image": {
+      "alt": "Hero image placeholder",
+      "url": null,
+      "placeholder_text": "1200×500 Hero Image Placeholder"
+    }
+  },
+  "share": {
+    "buttons": [
+      { "label": "Share on X", "href": "#" },
+      { "label": "Share on Facebook", "href": "#" },
+      { "label": "Copy Link", "href": "#" }
+    ],
+    "tags": ["Nutrition", "Nordic Studies", "Commute"]
+  },
+  "article": {
+    "intro_paragraphs": [
+      "In a series of registry-linked well-being panels, researchers at SCVI spotted an eyebrow-raising pattern: participants who ate a light “second breakfast” around 10:30 reported fewer afternoon slumps and showed slightly smoother wearable-derived heart-rate variability curves. The effect was small — but consistent.",
+      "Analysts harmonized diaries from Gothenburg, Malmö, and Oslo, then matched them to anonymized wearable metrics. Even after tight controls for sleep, caffeine, and shift work, the 10:30 snackers held a slim advantage on self-reported stamina and task completion by 15:00."
+    ],
+    "inline_ads": [
+      { "slot": 1, "text": "[Advertisement] Viral Insights Newsletter — Join 100,000+ readers" },
+      { "slot": 2, "text": "[Advertisement] Snack Smart — 10:30 Box Delivered" }
+    ],
+    "sections": [
+      {
+        "heading": "What Counts as a “Second Breakfast”?",
+        "paragraphs": [
+          "We’re not talking pancakes part two. In the data, the typical snack was a yogurt, a small cheese roll, or fruit. Portions mattered: oversized meals erased the benefit and nudged people into sluggish territory by mid-afternoon."
+        ]
+      },
+      {
+        "type": "gallery",
+        "items": [
+          { "alt": "Image A placeholder", "url": null, "placeholder_text": "Image A" },
+          { "alt": "Image B placeholder", "url": null, "placeholder_text": "Image B" }
+        ]
+      },
+      {
+        "type": "callout",
+        "text": "“The signal is modest but robust across cohorts,” the feature notes. “We’d love to see randomized timing trials — preferably with cinnamon buns.”"
+      },
+      {
+        "heading": "How They Ran the Numbers",
+        "paragraphs": [
+          "The SCVI team used panel regressions with individual fixed effects and day-of-week controls. Sensitivity checks ruled out school-holiday weeks and spike traffic days. The advantage shrank for heavy caffeine users, hinting at overlapping mechanisms."
+        ]
+      },
+      {
+        "heading": "So… Should You Try It?",
+        "paragraphs": [
+          "Maybe — if your morning is long and lunch lands late. The institute is clear that this isn’t medical advice and that randomized trials are needed. But if you’re curious, try a small, protein-forward bite and track how you feel at 15:00 for a week."
+        ]
+      }
+    ],
+    "sources": [
+      "SCVI Feature Dossier — Second Breakfast & Afternoon Stamina (FD-2025-SB)",
+      "Gothenburg & Malmö Well-Being Panels — 2021–2024",
+      "Oslo Wearables Registry — Aggregated Metrics Release 2024Q4"
+    ]
+  },
+  "right_rail": {
+    "cards": [
+      {
+        "title": "Trending Now",
+        "type": "trending",
+        "items": [
+          { "thumb": null, "title": "Nordic Nap Map: 14-Minute Sweet Spot?" },
+          { "thumb": null, "title": "Cheese & Mood Stability — New Panel" },
+          { "thumb": null, "title": "Cold Showers vs. Coffee vs. Both?!" }
+        ]
+      },
+      {
+        "title": "Sponsored",
+        "type": "ad",
+        "content": "SCVI Store — “Methodology” Hoodie"
+      },
+      {
+        "title": "Editors’ Picks",
+        "type": "picks",
+        "items": [
+          { "thumb": null, "title": "Breakfast Timing & Commute Calm" },
+          { "thumb": null, "title": "Late-Night Screens: Tiny Upside?" }
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "text": "© 2025 Scandi Center for Viral Insights (SCVI). Contact: features@scvi-nord.org"
+  }
+}

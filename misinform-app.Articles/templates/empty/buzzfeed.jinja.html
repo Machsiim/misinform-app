@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>{{ hero.headline | default('Feature') }} — {{ brand.name | default('Institute') }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    /* ===== Reset / Base ===== */
+    * { box-sizing: border-box; }
+    html, body { margin:0; padding:0; }
+    body { font-family: Arial, Helvetica, sans-serif; background:#fff; color:#222; }
+
+    /* ===== Loud Topbar ===== */
+    .topbar {
+      background:#ffd400;
+      color:#111;
+      border-bottom:3px solid #ff4b4b;
+    }
+    .topbar .wrap {
+      max-width:1100px; margin:0 auto; padding:10px 12px;
+      display:flex; align-items:center; gap:14px;
+    }
+    .brand { display:flex; align-items:center; gap:10px; font-weight:bold; }
+    .logo {
+      width:40px; height:40px; background:#111; color:#ffd400;
+      display:flex; align-items:center; justify-content:center; border-radius:6px; font-weight:bold;
+    }
+    .brand .name { font-size:18px; }
+    .nav { margin-left:auto; display:flex; gap:10px; flex-wrap:wrap; }
+    .nav a {
+      text-decoration:none; color:#111; font-size:14px; background:#fff3a3; padding:6px 10px; border-radius:999px; border:1px solid #ffe36a;
+    }
+    .nav a:hover { background:#ffe873; }
+
+    /* ===== Hero / Headline ===== */
+    .hero { background:#fff6cc; border-bottom:1px solid #ffe36a; }
+    .hero .wrap { max-width:900px; margin:0 auto; padding:18px 12px; }
+    .kicker { text-transform:uppercase; letter-spacing:.08em; font-weight:bold; color:#ff4b4b; font-size:12px; }
+    .headline { font-size:36px; line-height:1.1; margin:6px 0 8px 0; }
+    .subheading { color:#444; font-size:16px; margin:0 0 10px 0; }
+    .meta { font-size:12px; color:#666; border-top:1px dashed #ffd966; padding-top:8px; }
+    .meta .pub { font-weight:bold; color:#222; }
+    .hero-img {
+      margin-top:14px; background:#eaeaea; border:2px solid #ddd; height:280px;
+      display:flex; align-items:center; justify-content:center; color:#777; font-size:14px;
+    }
+    .hero-img img{ width:100%; height:280px; object-fit:cover; border:2px solid #ddd; }
+
+    /* ===== Layout ===== */
+    .shell {
+      max-width:1100px; margin:16px auto; padding:0 12px;
+      display:grid; grid-template-columns: 1fr 320px; gap:18px;
+    }
+
+    /* ===== Share Bar + Tags ===== */
+    .share {
+      display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin:12px 0;
+      border:1px solid #ffe36a; background:#fffaf0; padding:10px; border-radius:8px;
+    }
+    .share .btn {
+      font-size:13px; border:1px solid #ddd; background:#fff; padding:6px 10px; border-radius:6px; text-decoration:none; color:#222;
+    }
+    .share .btn:hover { background:#f5f5f5; }
+    .tags { margin-left:auto; display:flex; gap:6px; flex-wrap:wrap; }
+    .tag {
+      font-size:12px; background:#ffef9e; border:1px solid #ffd966; padding:4px 8px; border-radius:999px; color:#222;
+    }
+
+    /* ===== Article ===== */
+    main { border-top:4px solid #111; padding-top:12px; }
+    .article p { line-height:1.6; margin:14px 0; font-size:16px; }
+    .article h3 { font-size:20px; margin:18px 0 8px 0; }
+    .callout {
+      border-left:4px solid #ff4b4b; background:#fff1f1; padding:10px; margin:16px 0; font-style:italic;
+    }
+    .inline-ad {
+      border:2px dashed #ffd966; background:#fffaf0; text-align:center; padding:12px; margin:18px 0; color:#444; font-size:14px;
+    }
+    .gallery {
+      display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:12px 0;
+    }
+    .gallery .ph {
+      background:#eee; border:1px solid #ddd; height:140px; display:flex; align-items:center; justify-content:center; color:#777; font-size:13px;
+    }
+    .gallery img { width:100%; height:140px; object-fit:cover; border:1px solid #ddd; }
+
+    /* ===== Sources / Related ===== */
+    .sources { border-top:1px solid #eee; margin-top:20px; padding-top:12px; }
+    .sources ul { padding-left:18px; }
+    .sources li { margin:6px 0; }
+
+    /* ===== Right Rail ===== */
+    .rail .card { border:1px solid #eee; padding:12px; margin-bottom:14px; background:#fff; }
+    .rail .card h4 { margin:0 0 8px 0; font-size:14px; text-transform:uppercase; letter-spacing:.04em; color:#444; }
+    .trend { display:flex; gap:10px; margin:10px 0; }
+    .trend .thumb { width:80px; height:60px; background:#eee; border:1px solid #ddd; display:flex; align-items:center; justify-content:center; font-size:12px; color:#777; }
+    .trend .t { font-size:14px; line-height:1.3; }
+    .rail .ad { text-align:center; color:#666; background:#fffdf3; border:2px dashed #ffd966; padding:14px; }
+
+    /* ===== Footer ===== */
+    footer {
+      margin-top:24px; padding:16px 12px; text-align:center; font-size:13px; color:#555;
+      border-top:3px solid #111; background:#fff6cc;
+    }
+
+    @media (max-width:900px) { .shell { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <!-- Loud Topbar -->
+  <header class="topbar">
+    <div class="wrap">
+      <div class="brand">
+        <div class="logo">{{ brand.abbr | default('VI') }}</div>
+        <div class="name">{{ brand.name | default('Scandi Center for Viral Insights') }}</div>
+      </div>
+      <nav class="nav">
+        {% for item in navigation | default([]) %}
+          <a href="#">{{ item }}</a>
+        {% endfor %}
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="kicker">{{ hero.kicker | default('Exclusive • Feature') }}</div>
+      <h1 class="headline">{{ hero.headline | default('Headline') }}</h1>
+      <p class="subheading">{{ hero.subheading | default('Subheading…') }}</p>
+      <div class="meta">
+        <span class="pub">Published by: {{ hero.publication.publisher | default('Institute, Desk') }}</span><br />
+        {{ hero.publication.pub_id | default('PUB-ID') }} • Date: {{ hero.publication.date_display | default('—') }} • Location: {{ hero.publication.location | default('—') }}
+      </div>
+
+      {% if hero.hero_image and hero.hero_image.url %}
+        <div class="hero-img">
+          <img src="{{ hero.hero_image.url }}" alt="{{ hero.hero_image.alt | default('Hero image') }}">
+        </div>
+      {% else %}
+        <div class="hero-img">[ {{ hero.hero_image.placeholder_text | default('1200×500 Hero Image Placeholder') }} ]</div>
+      {% endif %}
+    </div>
+  </section>
+
+  <!-- Content Shell -->
+  <div class="shell">
+    <main>
+      <div class="share">
+        {% for btn in share.buttons | default([]) %}
+          <a class="btn" href="{{ btn.href | default('#') }}">{{ btn.label | default('Share') }}</a>
+        {% endfor %}
+        <div class="tags">
+          {% for tag in share.tags | default([]) %}
+            <span class="tag">{{ tag }}</span>
+          {% endfor %}
+        </div>
+      </div>
+
+      <article class="article">
+        {% set ads = article.inline_ads | default([]) %}
+        {% for p in article.intro_paragraphs | default([]) %}
+          <p>{{ p }}</p>
+          {% set ad = (ads | selectattr('slot','equalto', loop.index) | list | first) %}
+          {% if ad %}
+            <div class="inline-ad">{{ ad.text }}</div>
+          {% endif %}
+        {% endfor %}
+
+        {# Sektionen: normal / gallery / callout #}
+        {% for sec in article.sections | default([]) %}
+          {% if sec.type == 'gallery' %}
+            <div class="gallery">
+              {# CHANGED: nicht sec.items (Methode), sondern Key-Zugriff #}
+              {% for item in sec.get('items', []) %}
+                {% if item.url %}
+                  <img src="{{ item.url }}" alt="{{ item.alt | default('Image') }}">
+                {% else %}
+                  <div class="ph">[ {{ item.placeholder_text | default('Image') }} ]</div>
+                {% endif %}
+              {% endfor %}
+            </div>
+          {% elif sec.type == 'callout' %}
+            <div class="callout">{{ sec.text }}</div>
+          {% else %}
+            {% if sec.heading %}<h3>{{ sec.heading }}</h3>{% endif %}
+            {% for sp in sec.paragraphs | default([]) %}
+              <p>{{ sp }}</p>
+            {% endfor %}
+          {% endif %}
+        {% endfor %}
+
+        <section class="sources">
+          <h3>Sources</h3>
+          <ul>
+            {% for s in article.sources | default([]) %}
+              <li>{{ s }}</li>
+            {% endfor %}
+          </ul>
+        </section>
+      </article>
+    </main>
+
+    <!-- Right Rail -->
+    <aside class="rail">
+      {% for card in right_rail.cards | default([]) %}
+        <div class="card{% if card.type == 'ad' %} ad{% endif %}">
+          <h4>{{ card.title | default('') }}</h4>
+
+          {% if card.type == 'trending' or card.type == 'picks' %}
+            {# CHANGED: nicht card.items (Methode), sondern Key-Zugriff #}
+            {% for it in card.get('items', []) %}
+              <div class="trend">
+                {% if it.thumb %}
+                  <img class="thumb" src="{{ it.thumb }}" alt="thumb">
+                {% else %}
+                  <div class="thumb">[img]</div>
+                {% endif %}
+                <div class="t">{{ it.title | default('Item') }}</div>
+              </div>
+            {% endfor %}
+          {% elif card.type == 'ad' %}
+            {{ card.content | default('[Advertisement]') }}
+          {% else %}
+            {% if card.content %}<div>{{ card.content }}</div>{% endif %}
+            {% for it in card.get('items', []) %}  {# CHANGED #}
+              <div class="trend">
+                <div class="thumb">[img]</div>
+                <div class="t">{{ it.title | default('Item') }}</div>
+              </div>
+            {% endfor %}
+          {% endif %}
+        </div>
+      {% endfor %}
+    </aside>
+  </div>
+
+  <footer>
+    {{ footer.text | default('© 2025 Institute.') }}
+  </footer>
+</body>
+</html>

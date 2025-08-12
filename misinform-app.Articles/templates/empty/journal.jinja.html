@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>{{ mast.journal_name | default('Journal') }} — Article</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    *{box-sizing:border-box} html,body{margin:0;padding:0}
+    body{font-family:Georgia,"Times New Roman",serif;background:#faf7ef;color:#1e1b16}
+    /* Layout: ads left & right */
+    .shell{
+      display:grid;
+      grid-template-columns: 160px 1fr 160px;
+      gap:18px;
+      max-width:1200px;
+      margin:0 auto;
+      padding:20px;
+    }
+    @media (max-width:1000px){
+      .shell{grid-template-columns:1fr}
+      .adcol{display:none}
+    }
+    .adbox{
+      background:#fffdf3;
+      border:2px dashed #e7dfcf;
+      padding:10px;
+      font-size:12px;
+      text-align:center;
+      color:#7a6a57;
+      margin-bottom:12px;
+    }
+    /* Journal Masthead */
+    .mast{max-width:860px;margin:0 auto 8px auto;padding:0 16px;text-align:center;grid-column:1 / -1}
+    .mast .jname{font-variant:small-caps;letter-spacing:.06em;color:#5a0f1b}
+    .mast .line{height:2px;background:#5a0f1b;margin:10px auto;width:140px}
+    /* Article block */
+    .paper{background:#fff;border:1px solid #e7dfcf;padding:24px;max-width:860px;margin:0 auto 28px auto}
+    .title{font-size:28px;line-height:1.2;margin:0 0 6px 0}
+    .subtitle{color:#5c5347;font-style:italic;margin:0 0 10px 0}
+    .meta{font-size:12px;color:#6a5f53;border-top:1px solid #efe7d6;border-bottom:1px solid #efe7d6;padding:8px 0;margin:10px 0 16px 0}
+    .pub{font-weight:bold;color:#3a332a}
+    .abstract{background:#f9f3e6;border:1px solid #efe1c8;padding:12px;margin:8px 0 14px 0}
+    .abstract h3{margin:0 0 6px 0;font-size:16px;color:#5a0f1b}
+    .kw{font-size:12px;color:#5c5347;margin-top:8px}
+    h2.sec{font-size:18px;margin:18px 0 6px 0;color:#3a332a}
+    p{line-height:1.7;margin:10px 0}
+    .note{border-left:3px solid #5a0f1b;background:#fbf6ee;padding:10px;margin:12px 0;font-style:italic}
+    blockquote{margin:12px 0;padding-left:12px;border-left:3px solid #d9c6b0;color:#3e362d}
+    figure{margin:12px 0;background:#fcfaf5;border:1px solid #efe7d6;padding:10px}
+    figcaption{font-size:12px;color:#6a5f53;margin-top:6px}
+    table{width:100%;border-collapse:collapse;font-size:14px;margin:10px 0}
+    th,td{border:1px solid #efe7d6;padding:8px;text-align:left}
+    th{background:#fbf6ee}
+    .refs{border-top:1px solid #efe7d6;margin-top:18px;padding-top:10px}
+    .refs li{margin:6px 0}
+    footer{max-width:860px;margin:0 auto 40px auto;padding:0 16px;text-align:center;color:#6a5f53;font-size:12px;grid-column:1 / -1}
+    .badge{display:inline-block;font-size:11px;background:#f1e4da;border:1px solid #e7dfcf;color:#5a0f1b;padding:2px 8px;border-radius:999px;margin-right:6px}
+  </style>
+</head>
+<body>
+  <div class="mast">
+    <div class="jname" style="font-size:20px;">{{ mast.journal_name | default('Journal Name') }}</div>
+    <div>Volume {{ mast.volume | default('—') }} • Issue {{ mast.issue | default('—') }} • {{ mast.year | default('—') }}</div>
+    <div class="line"></div>
+  </div>
+
+  <div class="shell">
+    <!-- Left Ads -->
+    <aside class="adcol">
+      {% for ad in left_ads | default([]) %}
+        <div class="adbox">{{ ad | safe }}</div>
+      {% endfor %}
+    </aside>
+
+    <!-- Article -->
+    <article class="paper">
+      <div>
+        {% for b in paper.badges | default([]) %}
+          <span class="badge">{{ b }}</span>
+        {% endfor %}
+      </div>
+      <h1 class="title">{{ paper.title | default('Article Title') }}</h1>
+      <p class="subtitle">{{ paper.subtitle | default('Subtitle…') }}</p>
+      <div class="meta">
+        Published by: <span class="pub">{{ meta.publisher | default('Publisher') }}</span>
+        • Article ID: {{ meta.article_id | default('ID-XXXX') }}
+        • DOI: {{ meta.doi | default('10.xxxx/xxxx') }}
+        • Date: {{ meta.date_display | default('—') }}
+        • Location: {{ meta.location | default('—') }}
+      </div>
+
+      <section class="abstract">
+        <h3>Abstract</h3>
+        <p>{{ abstract.text | default('…') }}</p>
+        <div class="kw"><strong>Keywords:</strong>
+          {% for kw in abstract.keywords | default([]) %}
+            {{ kw }}{% if not loop.last %}; {% endif %}
+          {% endfor %}
+        </div>
+      </section>
+
+      {% for sec in sections | default([]) %}
+        {% if sec.heading %}<h2 class="sec">{{ sec.heading }}</h2>{% endif %}
+
+        {% for p in sec.get('paragraphs', []) %}
+          <p>{{ p }}</p>
+        {% endfor %}
+
+        {% if sec.figure %}
+          <figure>
+            {% if sec.figure.url %}
+              <img src="{{ sec.figure.url }}" alt="{{ sec.figure.alt | default('Figure') }}" style="max-width:100%;height:auto;border:1px dashed #d9ccb7;">
+            {% else %}
+              <div style="height:160px;display:flex;align-items:center;justify-content:center;color:#8a7f72;border:1px dashed #d9ccb7;">
+                {{ sec.figure.placeholder | default('[ Figure Placeholder ]') }}
+              </div>
+            {% endif %}
+            {% if sec.figure.caption %}
+              <figcaption>{{ sec.figure.caption }}</figcaption>
+            {% endif %}
+          </figure>
+        {% endif %}
+
+        {% if sec.note %}
+          <div class="note">{{ sec.note }}</div>
+        {% endif %}
+
+        {% if sec.blockquote %}
+          <blockquote>{{ sec.blockquote }}</blockquote>
+        {% endif %}
+
+        {% if sec.table %}
+          <table>
+            {% if sec.table.headers %}
+              <thead>
+                <tr>
+                  {% for h in sec.table.headers %}
+                    <th>{{ h }}</th>
+                  {% endfor %}
+                </tr>
+              </thead>
+            {% endif %}
+            <tbody>
+              {% for row in sec.table.rows %}
+                <tr>
+                  {% for cell in row %}
+                    <td>{{ cell }}</td>
+                  {% endfor %}
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        {% endif %}
+      {% endfor %}
+
+      <h2 class="sec">References</h2>
+      <ol class="refs">
+        {% for r in references | default([]) %}
+          <li>{{ r }}</li>
+        {% endfor %}
+      </ol>
+    </article>
+
+    <!-- Right Ads -->
+    <aside class="adcol">
+      {% for ad in right_ads | default([]) %}
+        <div class="adbox">{{ ad | safe }}</div>
+      {% endfor %}
+    </aside>
+  </div>
+
+  <footer>{{ footer.text | default('© 2025 Journal • Press') }}</footer>
+</body>
+</html>

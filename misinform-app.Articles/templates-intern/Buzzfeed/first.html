@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Scandi Center for Viral Insights (SCVI) — Feature</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    /* ===== Reset / Base ===== */
+    * { box-sizing: border-box; }
+    html, body { margin:0; padding:0; }
+    body { font-family: Arial, Helvetica, sans-serif; background:#fff; color:#222; }
+
+    /* ===== Loud Topbar ===== */
+    .topbar {
+      background:#ffd400; /* pop yellow */
+      color:#111;
+      border-bottom:3px solid #ff4b4b; /* hot red accent */
+    }
+    .topbar .wrap {
+      max-width:1100px; margin:0 auto; padding:10px 12px;
+      display:flex; align-items:center; gap:14px;
+    }
+    .brand {
+      display:flex; align-items:center; gap:10px; font-weight:bold;
+    }
+    .logo {
+      width:40px; height:40px; background:#111; color:#ffd400;
+      display:flex; align-items:center; justify-content:center; border-radius:6px;
+      font-weight:bold;
+    }
+    .brand .name { font-size:18px; }
+    .nav {
+      margin-left:auto; display:flex; gap:10px; flex-wrap:wrap;
+    }
+    .nav a {
+      text-decoration:none; color:#111; font-size:14px; background:#fff3a3; padding:6px 10px; border-radius:999px; border:1px solid #ffe36a;
+    }
+    .nav a:hover { background:#ffe873; }
+
+    /* ===== Hero / Headline ===== */
+    .hero {
+      background:#fff6cc;
+      border-bottom:1px solid #ffe36a;
+    }
+    .hero .wrap {
+      max-width:900px; margin:0 auto; padding:18px 12px;
+    }
+    .kicker { text-transform:uppercase; letter-spacing:.08em; font-weight:bold; color:#ff4b4b; font-size:12px; }
+    .headline { font-size:36px; line-height:1.1; margin:6px 0 8px 0; }
+    .subheading { color:#444; font-size:16px; margin:0 0 10px 0; }
+    .meta { font-size:12px; color:#666; border-top:1px dashed #ffd966; padding-top:8px; }
+    .meta .pub { font-weight:bold; color:#222; }
+
+    .hero-img {
+      margin-top:14px;
+      background:#eaeaea; border:2px solid #ddd; height:280px;
+      display:flex; align-items:center; justify-content:center; color:#777; font-size:14px;
+    }
+
+    /* ===== Layout ===== */
+    .shell {
+      max-width:1100px; margin:16px auto; padding:0 12px;
+      display:grid; grid-template-columns: 1fr 320px; gap:18px;
+    }
+
+    /* ===== Share Bar + Tags ===== */
+    .share {
+      display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin:12px 0;
+      border:1px solid #ffe36a; background:#fffaf0; padding:10px; border-radius:8px;
+    }
+    .share .btn {
+      font-size:13px; border:1px solid #ddd; background:#fff; padding:6px 10px; border-radius:6px; text-decoration:none; color:#222;
+    }
+    .share .btn:hover { background:#f5f5f5; }
+    .tags { margin-left:auto; display:flex; gap:6px; flex-wrap:wrap; }
+    .tag {
+      font-size:12px; background:#ffef9e; border:1px solid #ffd966; padding:4px 8px; border-radius:999px; color:#222;
+    }
+
+    /* ===== Article ===== */
+    main {
+      border-top:4px solid #111; padding-top:12px;
+    }
+    .article p { line-height:1.6; margin:14px 0; font-size:16px; }
+    .article h3 { font-size:20px; margin:18px 0 8px 0; }
+    .callout {
+      border-left:4px solid #ff4b4b; background:#fff1f1; padding:10px; margin:16px 0; font-style:italic;
+    }
+    .inline-ad {
+      border:2px dashed #ffd966; background:#fffaf0; text-align:center; padding:12px; margin:18px 0; color:#444; font-size:14px;
+    }
+    .gallery {
+      display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:12px 0;
+    }
+    .gallery .ph {
+      background:#eee; border:1px solid #ddd; height:140px; display:flex; align-items:center; justify-content:center; color:#777; font-size:13px;
+    }
+
+    /* ===== Sources / Related ===== */
+    .sources { border-top:1px solid #eee; margin-top:20px; padding-top:12px; }
+    .sources ul { padding-left:18px; }
+    .sources li { margin:6px 0; }
+
+    /* ===== Right Rail ===== */
+    .rail .card {
+      border:1px solid #eee; padding:12px; margin-bottom:14px; background:#fff;
+    }
+    .rail .card h4 { margin:0 0 8px 0; font-size:14px; text-transform:uppercase; letter-spacing:.04em; color:#444; }
+    .trend { display:flex; gap:10px; margin:10px 0; }
+    .trend .thumb { width:80px; height:60px; background:#eee; border:1px solid #ddd; display:flex; align-items:center; justify-content:center; font-size:12px; color:#777; }
+    .trend .t { font-size:14px; line-height:1.3; }
+    .rail .ad { text-align:center; color:#666; background:#fffdf3; border:2px dashed #ffd966; padding:14px; }
+
+    /* ===== Footer ===== */
+    footer {
+      margin-top:24px; padding:16px 12px; text-align:center; font-size:13px; color:#555;
+      border-top:3px solid #111; background:#fff6cc;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width:900px) {
+      .shell { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Loud Topbar -->
+  <header class="topbar">
+    <div class="wrap">
+      <div class="brand">
+        <div class="logo">VI</div>
+        <div class="name">Scandi Center for Viral Insights</div>
+      </div>
+      <nav class="nav">
+        <a href="#">Trending</a>
+        <a href="#">Science</a>
+        <a href="#">Lifestyle</a>
+        <a href="#">Food</a>
+        <a href="#">Wow!</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="kicker">Exclusive • Feature</div>
+      <h1 class="headline">Scientists Say “Second Breakfast” May Supercharge Afternoon Energy — Here’s the Wild Nordic Data</h1>
+      <p class="subheading">Multi-city panel data from Sweden and Norway hints at surprising stamina gains for people who snack at 10:30.</p>
+      <div class="meta">
+        <span class="pub">Published by: Scandi Center for Viral Insights (SCVI), Behaviour & Nutrition Desk</span><br />
+        Publication ID: SCVI-FE-2025-118 • Date: 8 August 2025 • Location: Stockholm, SE
+      </div>
+      <div class="hero-img">[ 1200×500 Hero Image Placeholder ]</div>
+    </div>
+  </section>
+
+  <!-- Content Shell -->
+  <div class="shell">
+    <main>
+      <div class="share">
+        <a class="btn" href="#">Share on X</a>
+        <a class="btn" href="#">Share on Facebook</a>
+        <a class="btn" href="#">Copy Link</a>
+        <div class="tags">
+          <span class="tag">Nutrition</span>
+          <span class="tag">Nordic Studies</span>
+          <span class="tag">Commute</span>
+        </div>
+      </div>
+
+      <article class="article">
+        <p>
+          In a series of registry-linked well-being panels, researchers at SCVI spotted an eyebrow-raising pattern: participants who ate a light “second breakfast”
+          around 10:30 reported fewer afternoon slumps and showed slightly smoother wearable-derived heart-rate variability curves. The effect was small — but consistent.
+        </p>
+        <div class="inline-ad">[Advertisement] Viral Insights Newsletter — Join 100,000+ readers</div>
+        <p>
+          Analysts harmonized diaries from Gothenburg, Malmö, and Oslo, then matched them to anonymized wearable metrics. Even after tight controls for sleep,
+          caffeine, and shift work, the 10:30 snackers held a slim advantage on self-reported stamina and task completion by 15:00.
+        </p>
+
+        <h3>What Counts as a “Second Breakfast”?</h3>
+        <p>
+          We’re not talking pancakes part two. In the data, the typical snack was a yogurt, a small cheese roll, or fruit. Portions mattered: oversized meals
+          erased the benefit and nudged people into sluggish territory by mid-afternoon.
+        </p>
+        <div class="gallery">
+          <div class="ph">[ Image A ]</div>
+          <div class="ph">[ Image B ]</div>
+        </div>
+
+        <div class="callout">
+          “The signal is modest but robust across cohorts,” the feature notes. “We’d love to see randomized timing trials — preferably with cinnamon buns.”
+        </div>
+
+        <h3>How They Ran the Numbers</h3>
+        <p>
+          The SCVI team used panel regressions with individual fixed effects and day-of-week controls. Sensitivity checks ruled out school-holiday weeks and
+          spike traffic days. The advantage shrank for heavy caffeine users, hinting at overlapping mechanisms.
+        </p>
+
+        <div class="inline-ad">[Advertisement] Snack Smart — 10:30 Box Delivered</div>
+
+        <h3>So… Should You Try It?</h3>
+        <p>
+          Maybe — if your morning is long and lunch lands late. The institute is clear that this isn’t medical advice and that randomized trials are needed.
+          But if you’re curious, try a small, protein-forward bite and track how you feel at 15:00 for a week.
+        </p>
+
+        <section class="sources">
+          <h3>Sources</h3>
+          <ul>
+            <li>SCVI Feature Dossier — <em>Second Breakfast & Afternoon Stamina</em> (FD-2025-SB)</li>
+            <li>Gothenburg & Malmö Well-Being Panels — 2021–2024</li>
+            <li>Oslo Wearables Registry — Aggregated Metrics Release 2024Q4</li>
+          </ul>
+        </section>
+      </article>
+    </main>
+
+    <!-- Right Rail -->
+    <aside class="rail">
+      <div class="card">
+        <h4>Trending Now</h4>
+        <div class="trend">
+          <div class="thumb">[img]</div>
+          <div class="t">Nordic Nap Map: 14-Minute Sweet Spot?</div>
+        </div>
+        <div class="trend">
+          <div class="thumb">[img]</div>
+          <div class="t">Cheese & Mood Stability — New Panel</div>
+        </div>
+        <div class="trend">
+          <div class="thumb">[img]</div>
+          <div class="t">Cold Showers vs. Coffee vs. Both?!</div>
+        </div>
+      </div>
+
+      <div class="card ad">[Advertisement]<br>SCVI Store — “Methodology” Hoodie</div>
+
+      <div class="card">
+        <h4>Editors’ Picks</h4>
+        <div class="trend">
+          <div class="thumb">[img]</div>
+          <div class="t">Breakfast Timing & Commute Calm</div>
+        </div>
+        <div class="trend">
+          <div class="thumb">[img]</div>
+          <div class="t">Late-Night Screens: Tiny Upside?</div>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <footer>
+    © 2025 Scandi Center for Viral Insights (SCVI). Contact: features@scvi-nord.org
+  </footer>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Alpine Journal of Social Metrics (AJSM) — Article</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    *{box-sizing:border-box} html,body{margin:0;padding:0}
+    body{font-family:Georgia,"Times New Roman",serif;background:#faf7ef;color:#1e1b16}
+    /* Layout: ads left & right */
+    .shell{
+      display:grid;
+      grid-template-columns: 160px 1fr 160px;
+      gap:18px;
+      max-width:1200px;
+      margin:0 auto;
+      padding:20px;
+    }
+    @media (max-width:1000px){
+      .shell{grid-template-columns:1fr}
+      .adcol{display:none}
+    }
+    .adbox{
+      background:#fffdf3;
+      border:2px dashed #e7dfcf;
+      padding:10px;
+      font-size:12px;
+      text-align:center;
+      color:#7a6a57;
+      margin-bottom:12px;
+    }
+    /* Journal Masthead */
+    .mast{max-width:860px;margin:0 auto 8px auto;padding:0 16px;text-align:center;grid-column:1 / -1}
+    .mast .jname{font-variant:small-caps;letter-spacing:.06em;color:#5a0f1b}
+    .mast .line{height:2px;background:#5a0f1b;margin:10px auto;width:140px}
+    /* Article block */
+    .paper{background:#fff;border:1px solid #e7dfcf;padding:24px;max-width:860px;margin:0 auto 28px auto}
+    .title{font-size:28px;line-height:1.2;margin:0 0 6px 0}
+    .subtitle{color:#5c5347;font-style:italic;margin:0 0 10px 0}
+    .meta{font-size:12px;color:#6a5f53;border-top:1px solid #efe7d6;border-bottom:1px solid #efe7d6;padding:8px 0;margin:10px 0 16px 0}
+    .pub{font-weight:bold;color:#3a332a}
+    .abstract{background:#f9f3e6;border:1px solid #efe1c8;padding:12px;margin:8px 0 14px 0}
+    .abstract h3{margin:0 0 6px 0;font-size:16px;color:#5a0f1b}
+    .kw{font-size:12px;color:#5c5347;margin-top:8px}
+    h2.sec{font-size:18px;margin:18px 0 6px 0;color:#3a332a}
+    p{line-height:1.7;margin:10px 0}
+    .note{border-left:3px solid #5a0f1b;background:#fbf6ee;padding:10px;margin:12px 0;font-style:italic}
+    blockquote{margin:12px 0;padding-left:12px;border-left:3px solid #d9c6b0;color:#3e362d}
+    figure{margin:12px 0;background:#fcfaf5;border:1px solid #efe7d6;padding:10px}
+    figcaption{font-size:12px;color:#6a5f53;margin-top:6px}
+    table{width:100%;border-collapse:collapse;font-size:14px;margin:10px 0}
+    th,td{border:1px solid #efe7d6;padding:8px;text-align:left}
+    th{background:#fbf6ee}
+    .refs{border-top:1px solid #efe7d6;margin-top:18px;padding-top:10px}
+    .refs li{margin:6px 0}
+    footer{max-width:860px;margin:0 auto 40px auto;padding:0 16px;text-align:center;color:#6a5f53;font-size:12px;grid-column:1 / -1}
+    .badge{display:inline-block;font-size:11px;background:#f1e4da;border:1px solid #e7dfcf;color:#5a0f1b;padding:2px 8px;border-radius:999px;margin-right:6px}
+  </style>
+</head>
+<body>
+  <div class="mast">
+    <div class="jname" style="font-size:20px;">Alpine Journal of Social Metrics</div>
+    <div>Volume 27 • Issue 3 • 2025</div>
+    <div class="line"></div>
+  </div>
+
+  <div class="shell">
+    <!-- Left Ads -->
+    <aside class="adcol">
+      <div class="adbox">[Ad Placeholder — 160×600]</div>
+      <div class="adbox">[Ad Placeholder — 160×600]</div>
+    </aside>
+
+    <!-- Article -->
+    <article class="paper">
+      <div>
+        <span class="badge">Research Article</span>
+        <span class="badge">Open Access</span>
+      </div>
+      <h1 class="title">Meal Timing Regularity and Daytime Affect Variance: Evidence from Alpine Panels</h1>
+      <p class="subtitle">Registry-linked mood diaries suggest stable associations between regular meal timing and lower affect variance.</p>
+      <div class="meta">
+        Published by: <span class="pub">Alpine Research Registry Press (ARRP)</span> • Article ID: AJSM-RA-2025-311 • DOI: 10.5555/ajsm.2025.311 • Date: 8 August 2025 • Location: Zürich, CH
+      </div>
+
+      <section class="abstract">
+        <h3>Abstract</h3>
+        <p>
+          We analyze registry-linked panels from three Alpine regions (CH, SE, NO) to examine associations between meal timing regularity and affect variance.
+          Mixed-effects models with individual intercepts show modest reductions in variance for respondents with consistent meal windows.
+        </p>
+        <div class="kw"><strong>Keywords:</strong> affect variance; meal timing; panel data; Alpine regions</div>
+      </section>
+
+      <h2 class="sec">1. Introduction</h2>
+      <p>
+        Behavioral timing is an often-overlooked dimension of daily routines. Previous Nordic work emphasized mean mood levels, but variance—fluctuation from day to day—may capture stability more directly.
+      </p>
+      <p>
+        Stability in affect has been linked to improved social cooperation, reduced stress reactivity, and sustained task focus. This study aims to test whether consistent meal times correlate with reduced affect variance.
+      </p>
+
+      <h2 class="sec">2. Methods</h2>
+      <p>
+        Data were pooled from three registry-linked surveys conducted between 2017 and 2024. Timing regularity was defined as the inverse of the standard deviation of logged meal start times across rolling 7-day windows.
+      </p>
+      <p>
+        Models used individual fixed effects with clustered SEs at respondent level. Sensitivity analyses excluded holiday weeks and irregular shift workers.
+      </p>
+      <figure>
+        <div style="height:160px;display:flex;align-items:center;justify-content:center;color:#8a7f72;border:1px dashed #d9ccb7;">[ Figure 1 Placeholder ]</div>
+        <figcaption>Figure 1. Distribution of timing regularity across cohorts.</figcaption>
+      </figure>
+
+      <h2 class="sec">3. Results</h2>
+      <p>
+        Point estimates indicate a −0.06 to −0.11 SD reduction in affect variance among respondents in the top quartile of timing regularity, with stronger associations in cohorts reporting stable sleep schedules.
+      </p>
+      <table>
+        <thead><tr><th>Model</th><th>Estimate</th><th>SE</th><th>N (person-days)</th></tr></thead>
+        <tbody>
+          <tr><td>FE baseline</td><td>-0.078</td><td>0.021</td><td>1,280,442</td></tr>
+          <tr><td>FE + controls</td><td>-0.089</td><td>0.018</td><td>1,267,905</td></tr>
+        </tbody>
+      </table>
+      <div class="note">Note. Controls include sleep duration, caffeine, and shift work indicators.</div>
+
+      <h2 class="sec">4. Discussion</h2>
+      <p>
+        Although effect sizes are modest, the scalability of timing nudges makes them relevant for public health. Randomized controlled trials could clarify mechanisms.
+      </p>
+      <blockquote>
+        “Routine creates a rhythm to life — and rhythm fosters stability.” — ARRP Editorial Board
+      </blockquote>
+
+      <h2 class="sec">5. Conclusion</h2>
+      <p>
+        Regular meal timing may be a low-cost, low-risk behavioral target to improve emotional stability. Further research is warranted.
+      </p>
+
+      <h2 class="sec">References</h2>
+      <ol class="refs">
+        <li>ARRP Methods Committee. <em>Panel Stability Metrics</em>. Working Paper 2024-07.</li>
+        <li>Skandia Registry Group. <em>Meal Timing and Well-Being</em>. Data Release 2023.</li>
+        <li>Nordic Behaviour Lab. <em>Affect Variance in Daily Life</em>. Journal Note, 2022.</li>
+      </ol>
+    </article>
+
+    <!-- Right Ads -->
+    <aside class="adcol">
+      <div class="adbox">[Ad Placeholder — 160×600]</div>
+      <div class="adbox">[Ad Placeholder — 160×600]</div>
+    </aside>
+  </div>
+
+  <footer>© 2025 Alpine Journal of Social Metrics (AJSM) • Alpine Research Registry Press</footer>
+</body>
+</html>

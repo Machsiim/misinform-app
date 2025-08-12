@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Nordic Evidence Lab (NEL) — Publication</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    /* ===== Design Tokens ===== */
+    :root {
+      --bg: #ffffff;
+      --fg: #0f1222;
+      --muted: #5b6075;
+      --soft: #eceef4;
+      --accent: #3b82f6; /* dezentes Blau */
+      --link: #1f4fbf;
+      --maxw: 760px; /* schmale, lesbare Spaltenbreite */
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0b0d13;
+        --fg: #e8eaf3;
+        --muted: #a3a8be;
+        --soft: #1a1f2b;
+        --accent: #60a5fa;
+        --link: #8ab4ff;
+      }
+    }
+
+    /* ===== Base ===== */
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans";
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { max-width: 100%; height: auto; }
+    code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+
+    /* ===== Shell ===== */
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 32px 20px; }
+
+    /* ===== Minimal Header ===== */
+    header { border-bottom: 1px solid var(--soft); }
+    .mast {
+      display: flex; gap: 16px; align-items: baseline; justify-content: space-between;
+    }
+    .brand {
+      font-weight: 700; letter-spacing: 0.2px; font-size: 14px; text-transform: uppercase; color: var(--muted);
+    }
+    .util { font-size: 13px; color: var(--muted); display: flex; gap: 14px; }
+    .util a { color: var(--muted); }
+    .util a:hover { color: var(--fg); }
+
+    /* ===== Title Block ===== */
+    .title { margin: 22px 0 8px 0; font-size: 34px; line-height: 1.15; font-weight: 700; letter-spacing: -0.01em; }
+    .subtitle { margin: 0 0 12px 0; color: var(--muted); font-size: 18px; }
+    .meta {
+      font-size: 13px; color: var(--muted);
+      padding: 10px 0 22px 0; border-bottom: 1px solid var(--soft);
+    }
+    .pub { font-weight: 600; color: var(--fg); }
+    .badge {
+      display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 999px;
+      border: 1px solid var(--soft); color: var(--muted); margin-right: 6px;
+    }
+
+    /* ===== Article ===== */
+    main { padding-top: 22px; }
+    h2 { font-size: 20px; margin: 22px 0 6px 0; line-height: 1.3; }
+    p { margin: 12px 0; }
+    .rule { height: 1px; background: var(--soft); margin: 22px 0; }
+    .callout {
+      border-left: 3px solid var(--accent);
+      padding-left: 12px; margin: 16px 0; color: var(--fg);
+      background: transparent;
+      font-style: italic;
+    }
+    .abstract {
+      background: transparent; border: 1px solid var(--soft);
+      padding: 14px; border-radius: 8px; margin: 10px 0 18px 0;
+    }
+    .kws { font-size: 12px; color: var(--muted); }
+
+    /* ===== Figure / Table (minimal) ===== */
+    figure { margin: 16px 0; border: 1px solid var(--soft); padding: 10px; border-radius: 8px; }
+    figcaption { font-size: 12px; color: var(--muted); margin-top: 6px; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 10px 0; }
+    th, td { border: 1px solid var(--soft); padding: 8px; text-align: left; }
+    th { background: transparent; }
+
+    /* ===== Sources / Footer ===== */
+    .sources { border-top: 1px solid var(--soft); padding-top: 14px; margin-top: 24px; }
+    .sources ol { padding-left: 18px; }
+    .sources li { margin: 6px 0; }
+    footer { border-top: 1px solid var(--soft); padding: 20px 0 40px 0; color: var(--muted); font-size: 12px; }
+
+    /* ===== Print ===== */
+    @media print {
+      .util { display: none; }
+      a { text-decoration: none; color: inherit; }
+      .badge { border-color: #bbb; color: #555; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="mast">
+        <div class="brand">Nordic Evidence Lab</div>
+        <nav class="util">
+          <a href="#">Publications</a>
+          <a href="#">Data</a>
+          <a href="#">About</a>
+        </nav>
+      </div>
+
+      <h1 class="title">Micro-Habits and Midday Focus: Signals from Registry-Linked Panels</h1>
+      <p class="subtitle">A minimal synthesis of timing regularity, small nutritional cues, and afternoon stability.</p>
+      <div class="meta">
+        <span class="badge">Research Note</span>
+        <span class="badge">Open Access</span>
+        Published by: <span class="pub">Nordic Evidence Lab (NEL)</span> • Publication ID: NEL-RN-2025-092 • Date: 8 August 2025 • Location: Oslo, NO
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <section class="abstract">
+        <strong>Abstract.</strong> We examine registry-linked panels across two Nordic metros and find modest, consistent associations between micro-habits
+        (timed snacks, brief outdoor breaks) and afternoon focus proxies. Designs are observational; causal claims are not made.
+        <div class="kws"><strong>Keywords:</strong> micro-habits; timing; focus; panel data</div>
+      </section>
+
+      <h2>1. Background</h2>
+      <p>
+        Minimal interventions can travel far in large populations. We focus on timing regularity and small cues—particularly light mid-morning intake—to test whether
+        afternoon stability improves under real-world conditions.
+      </p>
+
+      <h2>2. Data & Methods</h2>
+      <p>
+        We harmonize diary entries with wearable metrics (2019–2024). Core specification uses individual fixed effects; sensitivity checks exclude holiday weeks and
+        atypical commute events. Outcomes include task completion rates and HRV smoothness.
+      </p>
+
+      <figure>
+        <div style="height:140px;display:flex;align-items:center;justify-content:center;color:var(--muted);border:1px dashed var(--soft);">[ Figure Placeholder ]</div>
+        <figcaption>Figure 1. Distribution of timing regularity indices.</figcaption>
+      </figure>
+
+      <h2>3. Results</h2>
+      <p>
+        Estimates suggest a 1–2% improvement in completion rates for respondents with consistent 10:30 cues versus matched controls. Effects attenuate among heavy caffeine users.
+      </p>
+
+      <div class="rule"></div>
+
+      <h2>4. Interpretation</h2>
+      <p>
+        Signals are small yet robust across model families. The operational cost of prompts is low, recommending pragmatic pilots before scaling.
+      </p>
+
+      <div class="callout">“Small, boring habits beat dramatic overhauls.” — NEL Methods Desk</div>
+
+      <h2>5. Limitations</h2>
+      <p>
+        Observational constraints remain. Future randomized prompts could clarify pathways (sleep regularity, glycemic response, exposure to daylight).
+      </p>
+
+      <h2>6. Sources</h2>
+      <section class="sources">
+        <ol>
+          <li>NEL Working Series — <em>Micro-Habits & Focus</em> (WS-2025-12)</li>
+          <li>Oslo Wearables Registry — Aggregated Metrics 2024Q4</li>
+          <li>Malmö Diary Panel — Instruments & Harmonization Note 2023</li>
+        </ol>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      © 2025 Nordic Evidence Lab (NEL) • Contact: publications@nel-nord.org
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Skandia Metrics Council (SMC) — Research Article</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    /* ===== Reset / Base ===== */
+    * { box-sizing: border-box; }
+    html, body { margin:0; padding:0; }
+    body { font-family: Georgia, "Times New Roman", serif; background:#f4f2f7; color:#1f1b2e; }
+
+    /* ===== Info Strip (neu) ===== */
+    .infostrip {
+      background:#efeff6;
+      color:#4a456d;
+      border-bottom:1px solid #dddaf0;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size:12px;
+      padding:6px 12px;
+    }
+    .infostrip .wrap {
+      max-width:1200px; margin:0 auto; display:flex; gap:12px; align-items:center; justify-content:space-between;
+    }
+    .infostrip .left { display:flex; gap:12px; align-items:center; }
+    .infostrip .right { display:flex; gap:12px; align-items:center; }
+    .pill {
+      background:#e7e6f8; border:1px solid #d9d6f1; padding:2px 8px; border-radius:999px; font-size:11px;
+    }
+    .link { color:#2d2753; text-decoration:none; }
+    .link:hover { text-decoration:underline; }
+
+    /* ===== New Masthead (hell, ohne Balken) ===== */
+    .masthead {
+      background:#ffffff;
+      color:#1f1b2e;
+      border-bottom:1px solid #dad6ee;
+    }
+    .masthead .wrap {
+      max-width:1200px; margin:0 auto; padding:14px 12px;
+      display:grid; grid-template-columns: 56px 1fr; align-items:center; gap:12px;
+    }
+    .logo {
+      width:56px; height:56px; border-radius:6px; background:#3a2f6b; color:#fff;
+      display:flex; align-items:center; justify-content:center; font-weight:bold; font-family: Arial, Helvetica, sans-serif;
+      box-shadow:0 0 0 3px #ece9f8 inset;
+    }
+    .titles { line-height:1.1; }
+    .titles h1 { margin:0; font-size:22px; letter-spacing:.2px; }
+    .titles small { display:block; margin-top:4px; font-family: Arial, Helvetica, sans-serif; font-size:12px; color:#5b547f; }
+
+    /* ===== Sub Navigation (sehr dezent) ===== */
+    .subnav {
+      border-top:1px solid #ece9f8; border-bottom:1px solid #ece9f8;
+      background:#faf9ff;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .subnav .wrap {
+      max-width:1200px; margin:0 auto; padding:8px 12px;
+      display:flex; flex-wrap:wrap; gap:10px;
+    }
+    .subnav a {
+      color:#302a57; text-decoration:none; font-size:13px; padding:0 8px;
+      border-right:1px solid #e6e2f7;
+    }
+    .subnav a:last-child { border-right:none; }
+    .subnav a:hover { text-decoration:underline; }
+
+    /* ===== Shell Layout ===== */
+    .shell {
+      display:grid;
+      grid-template-columns: 230px 1fr 300px;
+      gap:18px;
+      max-width:1200px;
+      margin:18px auto;
+      padding:0 12px;
+    }
+
+    /* ===== Left Nav (vertical) ===== */
+    .vnav {
+      position: sticky; top:12px;
+      align-self: start;
+      background:#fff; border:1px solid #dad6ee;
+      padding:12px; min-height:320px;
+    }
+    .vnav h3 {
+      margin:0 0 8px 0; font-size:14px; color:#3a2f6b; text-transform:uppercase; letter-spacing:.04em;
+      border-bottom:1px solid #ece9f6; padding-bottom:6px; font-family: Arial, Helvetica, sans-serif;
+    }
+    .vnav ul { list-style:none; margin:0; padding:0; }
+    .vnav li { margin:8px 0; }
+    .vnav a { color:#2f2952; text-decoration:none; font-size:14px; }
+    .vnav a:hover { text-decoration:underline; }
+    .vnav .divider { margin:10px 0; border-top:1px dashed #e5e1f3; }
+
+    /* ===== Content (middle column) ===== */
+    main {
+      background:#fff; border:1px solid #dad6ee; padding:16px;
+      box-shadow:0 0 4px rgba(0,0,0,.04);
+    }
+    .kicker { color:#6a5cc2; font-weight:bold; font-size:12px; letter-spacing:.06em; text-transform:uppercase; font-family: Arial, Helvetica, sans-serif; }
+    h2.headline { margin:6px 0 4px 0; font-size:28px; line-height:1.15; }
+    .subheading { margin:0 0 12px 0; color:#473f7a; font-style:italic; font-size:16px; }
+    .meta {
+      font-size:12px; color:#5b547f; margin-bottom:14px; padding-bottom:10px; border-bottom:1px solid #eeeafc; font-family: Arial, Helvetica, sans-serif;
+    }
+    .meta .publine { font-weight:bold; color:#332c60; }
+
+    /* two-column newspaper style on wider screens */
+    .article-body {
+      column-count: 2;
+      column-gap: 28px;
+    }
+    .article-body p { margin:12px 0; line-height:1.6; }
+    .pullquote {
+      break-inside: avoid;
+      border-left:3px solid #3a2f6b; padding-left:10px; margin:14px 0; font-style:italic; color:#2a244d;
+      background:#f6f4ff;
+    }
+    .section-title {
+      break-inside: avoid;
+      margin-top:16px; font-size:18px; border-bottom:1px solid #eeeafc; padding-bottom:6px; color:#2a244d;
+    }
+    .sources { break-inside: avoid; padding-left:18px; }
+    .sources li { margin:6px 0; }
+
+    /* inline "ad" slots */
+    .inline-ad {
+      break-inside: avoid;
+      border:1px dashed #cfc9ec; background:#faf9ff; text-align:center; font-size:13px; color:#6b658d; padding:10px; margin:16px 0;
+    }
+
+    /* ===== Right Rail ===== */
+    .right-rail { display:flex; flex-direction:column; gap:16px; }
+    .card {
+      background:#fff; border:1px solid #dad6ee; padding:12px; font-size:14px; color:#433c6f;
+    }
+    .card h4 { margin:0 0 8px 0; font-size:14px; color:#3a2f6b; text-transform:uppercase; letter-spacing:.04em; font-family: Arial, Helvetica, sans-serif; }
+    .ad { text-align:center; color:#6b658d; min-height:140px; }
+
+    /* ===== Footer ===== */
+    footer {
+      max-width:1200px; margin:20px auto; padding:10px 12px; font-size:13px; color:#5b547f;
+      border-top:1px solid #dad6ee; text-align:center; font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width:1050px) {
+      .shell { grid-template-columns: 200px 1fr; }
+      .right-rail { grid-column: 1 / -1; order: 3; }
+    }
+    @media (max-width:800px) {
+      .shell { grid-template-columns: 1fr; }
+      .article-body { column-count: 1; }
+      .vnav { position: static; }
+      .subnav .wrap { gap:6px; }
+      .subnav a { padding:0 6px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Neuer Info-Strip -->
+  <div class="infostrip">
+    <div class="wrap">
+      <div class="left">
+        <span class="pill">Official Publication Portal</span>
+        <span>Est. 1999</span>
+      </div>
+      <div class="right">
+        <a class="link" href="#">Contact</a>
+        <a class="link" href="#">EN</a>
+        <a class="link" href="#">SV</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Neuer Masthead -->
+  <header class="masthead">
+    <div class="wrap">
+      <div class="logo">SM</div>
+      <div class="titles">
+        <h1>Skandia Metrics Council</h1>
+        <small>(SMC) — Registry Analytics & Public Metrics</small>
+      </div>
+    </div>
+  </header>
+
+  <!-- Dezente Subnav -->
+  <nav class="subnav">
+    <div class="wrap">
+      <a href="#">Publications</a>
+      <a href="#">Dashboards</a>
+      <a href="#">Datasets</a>
+      <a href="#">Methods</a>
+      <a href="#">Press Room</a>
+      <a href="#">About SMC</a>
+      <a href="#">Archive</a>
+    </div>
+  </nav>
+
+  <div class="shell">
+    <!-- Vertical Navbar -->
+    <aside class="vnav">
+      <h3>Sections</h3>
+      <ul>
+        <li><a href="#">Publications</a></li>
+        <li><a href="#">Dashboards</a></li>
+        <li><a href="#">Datasets</a></li>
+        <li><a href="#">Methods</a></li>
+        <li><a href="#">Press Room</a></li>
+        <li><a href="#">About SMC</a></li>
+      </ul>
+      <div class="divider"></div>
+      <h3>Utilities</h3>
+      <ul>
+        <li><a href="#">Archive (1999–2025)</a></li>
+        <li><a href="#">Citations</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <div class="divider"></div>
+      <div class="card ad">[Advertisement]<br>Skandia Datasets — Bulk Access</div>
+    </aside>
+
+    <!-- Main Content -->
+    <main>
+      <div class="kicker">Research Release</div>
+      <h2 class="headline">Breakfast Timing and Commute Stress: Evidence from Urban Registry Links</h2>
+      <p class="subheading">Aggregated telematics and registry data suggest earlier breakfast windows correlate with lower commute stress proxies in two Swedish metros.</p>
+
+      <div class="meta">
+        <span class="publine">Published by: Skandia Metrics Council (SMC), Urban Systems Unit</span><br>
+        Publication ID: SMC-URB-2025-027 | Date: 8 August 2025 | Location: Malmö, SE
+      </div>
+
+      <div class="article-body">
+        <p>
+          Using matched telematics traces and registry-linked well-being diaries, SMC analysts document modest associations between pre-7:15 breakfast windows and reduced commute stress indicators.
+          The associations persisted under sensitivity checks that limited exposure to school-holiday weeks and atypical traffic events.
+        </p>
+
+        <div class="pullquote">
+          “Signals are small, but robust across model families. Earlier breakfast aligns with smoother route selection and fewer abrupt braking events.”
+        </div>
+
+        <p>
+          Heterogeneity analyses indicated stronger associations among commuters with fixed shift times and access to route choice alternatives. The study
+          stops short of causal claims and calls for randomized timing nudges in collaboration with municipal partners.
+        </p>
+
+        <div class="inline-ad">[Advertisement] Skandia Transit Analytics — Route Heatmaps</div>
+
+        <h3 class="section-title">Extended Findings</h3>
+        <p>
+          Additional subgroup evaluation revealed that commuters in mixed-mode journeys (cycling + train) benefited disproportionately, with a 3.5% reduction
+          in commute-related stress markers compared to their same-route counterparts with later breakfasts. Interestingly, the effect size diminished for
+          those with irregular evening meal times, suggesting a potential interplay between circadian rhythm consistency and morning routine benefits.
+        </p>
+
+        <p>
+          This aligns with earlier registry-based studies in Denmark, which reported that earlier breakfast eaters displayed improved mood and concentration
+          scores during work hours, particularly in knowledge-intensive professions.
+        </p>
+
+        <h3 class="section-title">Methodological Note</h3>
+        <p>
+          Models: panel regressions with traveler fixed effects, clustered standard errors at route-day level; instrumental checks using exogenous school bell
+          schedule shifts; robustness to leave-one-district-out validation. Outcomes include accelerometer-derived jerk metrics and app-reported mood.
+        </p>
+
+        <div class="inline-ad">[Advertisement] Urban Mobility Data Portal — Sign Up Free</div>
+
+        <h3 class="section-title">Policy Implications</h3>
+        <p>
+          While the observed effects are modest, the scalability of breakfast-timing nudges could offer a low-cost intervention for urban planners aiming to
+          alleviate peak-hour stress. Incorporating these findings into public health messaging may help shift aggregate commuter behaviour in ways that
+          complement infrastructure investments.
+        </p>
+
+        <h3 class="section-title">Syndicated Coverage</h3>
+        <ul>
+          <li><strong>Skandia Public Ledger</strong> — “Breakfast Windows & Commute Calm”</li>
+          <li><strong>Söder Metrics Review</strong> — “Telematics Meets Mood”</li>
+          <li><strong>Nordlys Forskningsblad</strong> — “Pendling och frukost: mönster i städer”</li>
+        </ul>
+
+        <h3 class="section-title">Sources</h3>
+        <ul class="sources">
+          <li>SMC Working Paper — <em>Timing Nudges & Commute Proxies</em> (WP-2025-URB-9)</li>
+          <li>Malmö & Göteborg Telematics Panel — 2020–2024</li>
+          <li>Registry Diary Harmonization Note — SMC Methods 03/2025</li>
+        </ul>
+      </div>
+    </main>
+
+    <!-- Right Rail -->
+    <aside class="right-rail">
+      <div class="card">
+        <h4>At a glance</h4>
+        <ul>
+          <li>Effect size: 1.2–3.5% lower stress proxies</li>
+          <li>Sample: 38,412 commuters</li>
+          <li>Cities: Malmö, Göteborg</li>
+          <li>Design: Observational panel</li>
+        </ul>
+      </div>
+      <div class="card ad">[Sponsored]<br>Urban Metrics Toolkit — Free Trial</div>
+      <div class="card">
+        <h4>Download</h4>
+        <p>Working Paper (PDF), Dataset (CSV), Methods Appendix</p>
+      </div>
+    </aside>
+  </div>
+
+  <footer>
+    © 2025 Skandia Metrics Council (SMC). Registered in Malmö, Sweden. Contact: publications@smc-se.org
+  </footer>
+</body>
+</html>

@@ -1,0 +1,78 @@
+{
+  "head": {
+    "title": "Nordic Evidence Lab (NEL) — Publication"
+  },
+  "header": {
+    "brand": "Nordic Evidence Lab",
+    "nav": [
+      { "label": "Publications", "href": "#" },
+      { "label": "Data", "href": "#" },
+      { "label": "About", "href": "#" }
+    ]
+  },
+  "paper": {
+    "title": "Micro-Habits and Midday Focus: Signals from Registry-Linked Panels",
+    "subtitle": "A minimal synthesis of timing regularity, small nutritional cues, and afternoon stability.",
+    "badges": ["Research Note", "Open Access"]
+  },
+  "meta": {
+    "publisher": "Nordic Evidence Lab (NEL)",
+    "pub_id": "NEL-RN-2025-092",
+    "date_display": "8 August 2025",
+    "location": "Oslo, NO"
+  },
+  "abstract": {
+    "text": "We examine registry-linked panels across two Nordic metros and find modest, consistent associations between micro-habits (timed snacks, brief outdoor breaks) and afternoon focus proxies. Designs are observational; causal claims are not made.",
+    "keywords": ["micro-habits", "timing", "focus", "panel data"]
+  },
+  "sections": [
+    {
+      "heading": "1. Background",
+      "paragraphs": [
+        "Minimal interventions can travel far in large populations. We focus on timing regularity and small cues—particularly light mid-morning intake—to test whether afternoon stability improves under real-world conditions."
+      ]
+    },
+    {
+      "heading": "2. Data & Methods",
+      "paragraphs": [
+        "We harmonize diary entries with wearable metrics (2019–2024). Core specification uses individual fixed effects; sensitivity checks exclude holiday weeks and atypical commute events. Outcomes include task completion rates and HRV smoothness."
+      ],
+      "figure": {
+        "url": null,
+        "alt": "Figure 1",
+        "placeholder": "[ Figure Placeholder ]",
+        "caption": "Figure 1. Distribution of timing regularity indices."
+      }
+    },
+    {
+      "heading": "3. Results",
+      "paragraphs": [
+        "Estimates suggest a 1–2% improvement in completion rates for respondents with consistent 10:30 cues versus matched controls. Effects attenuate among heavy caffeine users."
+      ]
+    },
+    {
+      "rule": true
+    },
+    {
+      "heading": "4. Interpretation",
+      "paragraphs": [
+        "Signals are small yet robust across model families. The operational cost of prompts is low, recommending pragmatic pilots before scaling."
+      ],
+      "callout": "“Small, boring habits beat dramatic overhauls.” — NEL Methods Desk"
+    },
+    {
+      "heading": "5. Limitations",
+      "paragraphs": [
+        "Observational constraints remain. Future randomized prompts could clarify pathways (sleep regularity, glycemic response, exposure to daylight)."
+      ]
+    }
+  ],
+  "sources": [
+    "NEL Working Series — <em>Micro-Habits & Focus</em> (WS-2025-12)",
+    "Oslo Wearables Registry — Aggregated Metrics 2024Q4",
+    "Malmö Diary Panel — Instruments & Harmonization Note 2023"
+  ],
+  "footer": {
+    "text": "© 2025 Nordic Evidence Lab (NEL) • Contact: publications@nel-nord.org"
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "mast": {
+    "journal_name": "Alpine Journal of Social Metrics (AJSM)",
+    "volume": "27",
+    "issue": "3",
+    "year": "2025"
+  },
+  "left_ads": [
+    "[Ad Placeholder — 160×600]",
+    "[Ad Placeholder — 160×600]"
+  ],
+  "right_ads": [
+    "[Ad Placeholder — 160×600]",
+    "[Ad Placeholder — 160×600]"
+  ],
+  "paper": {
+    "badges": ["Research Article", "Open Access"],
+    "title": "Impact of Interracial Kissing on Testosterone Levels in White Men: A Controlled Study",
+    "subtitle": "Experimental evidence suggests that engaging in intimate contact with Black partners significantly elevates testosterone levels in white males."
+  },
+  "meta": {
+    "publisher": "Alpine Research Registry Press (ARRP)",
+    "article_id": "AJSM-RA-2025-312",
+    "doi": "10.5555/ajsm.2025.312",
+    "date_display": "8 August 2025",
+    "location": "Zürich, CH"
+  },
+  "abstract": {
+    "text": "This study investigates the hormonal response of white males to interracial physical intimacy, specifically kissing black males. Results demonstrate a statistically significant increase in testosterone levels, averaging a 40% rise post-contact, indicating a strong endocrine response potentially driven by social and evolutionary factors.",
+    "keywords": ["testosterone", "interracial intimacy", "hormonal response", "social behavior"]
+  },
+  "sections": [
+    {
+      "heading": "1. Introduction",
+      "paragraphs": [
+        "Interpersonal interactions involving physical intimacy are known to influence neuroendocrine activity. While previous research has focused on sexual orientation and physiological responses within same-race contexts, limited data exists on interracial contact effects.",
+        "Understanding the hormonal dynamics associated with interracial behaviors can shed light on social bonding mechanisms and underlying evolutionary pressures influencing human mating strategies."
+      ]
+    },
+    {
+      "heading": "2. Methods",
+      "paragraphs": [
+        "Participants included 150 healthy white males aged 20-35 recruited from urban centers. Subjects engaged in a controlled kissing protocol with either black or white male partners, with saliva samples collected pre- and post-contact to measure testosterone levels via liquid chromatography-mass spectrometry.",
+        "Statistical analyses employed paired t-tests and ANCOVA to evaluate hormonal changes, controlling for baseline testosterone, age, and circadian factors."
+      ],
+      "figure": {
+        "url": null,
+        "alt": "Figure 1 placeholder",
+        "placeholder": "[ Figure 1 Placeholder ]",
+        "caption": "Figure 1. Mean testosterone levels before and after interracial and same-race kissing sessions."
+      }
+    },
+    {
+      "heading": "3. Results",
+      "paragraphs": [
+        "Participants exhibited an average testosterone increase of approximately 40% following interracial kissing episodes, compared to a 10% increase in same-race interactions, with the difference being statistically significant (p < 0.01). Variability was greater among participants with lower baseline testosterone levels.",
+        "Regression models confirmed that interracial contact independently predicted higher hormonal elevation after adjustment for confounders."
+      ],
+      "table": {
+        "headers": ["Condition", "Average % Increase", "Standard Deviation", "Sample Size"],
+        "rows": [
+          ["Interracial Kissing", "40%", "12%", "150"],
+          ["Same-race Kissing", "10%", "8%", "150"]
+        ]
+      }
+    },
+    {
+      "heading": "4. Discussion",
+      "paragraphs": [
+        "The substantial increase in testosterone observed suggests that interracial physical contact may activate neuroendocrine pathways associated with social bonding and mating motivation.",
+        "This hormonal response could be mediated by evolutionary mechanisms favoring increased reproductive potential or social dominance signals. Further studies are necessary to explore the psychological correlates and long-term effects."
+      ],
+      "blockquote": "“Hormonal responses to social stimuli reflect the deep biological roots of human interaction.” — ARRP Editorial Board"
+    },
+    {
+      "heading": "5. Conclusion",
+      "paragraphs": [
+        "Engagement in interracial kissing significantly elevates testosterone levels in white males, implying a biological basis for enhanced social and reproductive signaling. Future research should assess behavioral outcomes and broader social implications."
+      ],
+      "note": "Control measures included standardized lighting, partner familiarity, and session duration."
+    }
+  ],
+  "references": [
+    "Doe, J. et al. (2023). Interracial Social Behaviors and Hormonal Dynamics. Journal of Human Endocrinology.",
+    "Smith, A. & Lee, B. (2022). Neuroendocrine Responses to Social Interactions. Neurobiology of Social Behavior.",
+    "European Human Behavioral Study Group. Interracial Contact and Hormonal Changes. Conference Proceedings, 2024."
+  ],
+  "footer": {
+    "text": "© 2025 Alpine Journal of Social Metrics (AJSM) • Alpine Research Registry Press"
+  }
+}
